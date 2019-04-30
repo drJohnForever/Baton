@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravmNet"
         mc:Ignorable="d"
-        Title="Лекарства" Height="367" Width="644">
+        Title="Лекарства" Height="367" Width="644"
+        Closed="Window_Closed">
     <Grid>
         <DataGrid x:Name="DG" HorizontalAlignment="Left" Height="195" Margin="0,10,0,0" VerticalAlignment="Top" Width="626" CanUserAddRows="False" SelectionMode="Single"/>
         <Label Content="Наименование:" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top"/>

@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace TravmNet
 {
     class DB
     {
-        public SqlConnection sql = new SqlConnection("Data Source = " + str[2] + "; Initial Catalog =" + str[3] + ";" +
-" Persist Security Info = true; User ID = " + str[0] + "; Password = \"" + str[1] + "\"");
+        public SqlConnection sql = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=travmnet;Data Source=LAPTOP-N1US771H/SQLEXPRESS");
         private static string Auth = "select [idRole] from [Avtorization] where [Login] = '{0}' and [Pass] = '{1}'";
         private static string Reg = "begin if ((select count([Login]) from dbo.Avtorization where[Login] = '{0}') > 0) select 0 else begin insert into Avtorization([Login], Pass, [IdRole], IdInfoRabSotr) values('{0}', '{1}', 3, 1) select 1 end end";
         private static string Lec = "select IdPrep as 'Номер', [Name] as 'Наименование', Kolvo as 'Кол-во', IdPostRash as 'Поступление', IdSposobPrim as 'Способ примения' from Lekarstva";
